@@ -56,9 +56,11 @@ class _api05State extends State<api05> {
               return (ListView.builder(
                   itemCount: snapshot.data?.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
+                    return Padding(
+                      padding: const EdgeInsets.all(10)
+                      child:ListTile(
                       leading: SizedBox.square(
-                        dimension: 200,
+                        dimension: 100,
                         child: CircleAvatar(
                           backgroundImage:
                               NetworkImage(snapshot.data![index].avatar),
@@ -66,19 +68,19 @@ class _api05State extends State<api05> {
                       ),
                       title: Card(
                           child: SizedBox(
-                              height: 15,
-                              width: 15,
+                              height: 35,
+                              width: 5o,
                               child:
-                                  Text(snapshot.data![index].id.toString()))),
+                                  Text(snapshot.data![index]!.lastName))),
                       subtitle: Card(
                           child: SizedBox(
-                              height: 15,
-                              width: 15,
+                              height: 35,
+                              width: 50,
                               child: Text(snapshot.data![index].email))),
                       trailing: Card(
                           child: SizedBox(
-                              height: 15,
-                              width: 15,
+                              height: 35,
+                              width: 50,
                               child: Text(snapshot.data![index]!.firstName))),
                     );
                   }));
